@@ -14,12 +14,12 @@ function solution(lottos, win_nums) {
     // 7에서 당첨 번호의 개수를 빼면 등수가 나온다.
 
     // 배열 lottos의 요소들 중, 배열 win_nums에 포함되어 있거나(include) 0인 요소들을 골라내서(filter) 새로운 배열을 만든다. 
-    // 그 배열의 길이를 구해서 길이가 0(falsy)일 경우엔 1로 취급한다. 
+    // 그 배열의 길이(length, 당첨 번호의 개수)를 구해서 길이가 0(falsy)일 경우엔 1로 취급한다. 
     // 7에서 길이를 빼면 최고 순위가 나온다. 
     let highest = 7 - (lottos.filter((elem) => win_nums.includes(elem) || elem == 0).length || 1);
 
     // 배열 lottos의 요소들 중, 배열 win_nums에 포함된(include) 요소들을 골라내서(filter) 새로운 배열을 만든다. 
-    // 그 배열의 길이를 구해서 길이가 0(falsy)일 경우엔 1로 취급한다. 
+    // 그 배열의 길이(length, 당첨 번호의 개수)를 구해서 길이가 0(falsy)일 경우엔 1로 취급한다. 
     // 7에서 길이를 빼면 최저 순위가 나온다.
     let lowest = 7 - (lottos.filter((elem) => win_nums.includes(elem)).length || 1);
 

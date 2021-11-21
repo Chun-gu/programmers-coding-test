@@ -24,5 +24,5 @@ function solution(lottos, win_nums) {
     let lowest = 7 - (lottos.filter((elem) => win_nums.includes(elem)).length || 1);
 
     const answer = [highest, lowest];
-    return answer;
+    return answer; 
 }

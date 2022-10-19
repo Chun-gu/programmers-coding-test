@@ -25,7 +25,7 @@ function solution(dots) {
   // 기울기들의 배열에서 인덱스 0과 5, 1과 4, 2와 3이 비교대상이므로 비교한다.
   // 비교하다가 같은 경우가 나오면 answer에 1을 할당해서 반환한다.
   for (let i = 0; i < gradients.length / 2; i++) {
-    if (gradients[i] === gradients.at(2 * i - 1)) {
+    if (gradients[i] === gradients.at(-i - 1)) {
       answer = 1;
       return answer;
     }
@@ -82,4 +82,3 @@ const dots = [
   [3, 8],
   [10, 4],
 ];
-console.log(solution(dots));

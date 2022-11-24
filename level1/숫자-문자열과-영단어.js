@@ -1,22 +1,22 @@
 function solution(s) {
-    /*  
+  /*  
     주어진 문자열에서 영단어를 해당 숫자로 replace하는 문제다.
     s.replace("zero", 0).replace("one", 1)...식으로 replace를 쭈욱 이어붙이려고 했지만,
     교체 대상만 달라지는 메소드를 반복 작성하는 건 효율적이지 않은 것 같아서 반복문으로 만들기로 했다.
     먼저 교체할 단어들이 담긴 배열 words를 만들고, */
-    let words = [
-        "zero",
-        "one",
-        "two",
-        "three",
-        "four",
-        "five",
-        "six",
-        "seven",
-        "eight",
-        "nine",
-    ];
-    /* 
+  let words = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+  ];
+  /* 
     해당 배열을 쭉 돌면서 반복하는 코드를 작성했다.
     for (let i = 0; i < words.length; i++) {
         s = s.replace(words[i], i);
@@ -36,12 +36,12 @@ function solution(s) {
     이를 해결하기 위해 정규표현식 객체로 정규표현식을 생성하여 교체 대상 문자열의 자리에 넣어줬다.
     */
 
-    for (let i = 0; i < words.length; i++) {
-        let regex = new RegExp(words[i], "g");
-        s = s.replace(regex, i);
-        console.log(s);
-    }
+  for (let i = 0; i < words.length; i++) {
+    let regex = new RegExp(words[i], "g");
+    s = s.replace(regex, i);
+    console.log(s);
+  }
 
-    const answer = Number(s);
-    return answer;
+  const answer = Number(s);
+  return answer;
 }
